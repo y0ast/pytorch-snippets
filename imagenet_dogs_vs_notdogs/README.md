@@ -24,11 +24,20 @@ comm -3 <(sort imagenet.txt) <(sort imagenet_dogs.txt) > imagenet_notdogs.txt
 shuf -n 118 imagenet.txt > imagenet_notdogs_subset.txt
 ```
 
-To copy all folders in one of the files (with val preprocessed using [Soumith's script](https://raw.githubusercontent.com/soumith/imagenetloader.torch/master/valprep.sh)):
+In a folder with the `train/` and `val/` imagenet sub-folders:
 
 ```
 mkdir -p imagenet_notdogs/train
 mkdir -p imagenet_notdogs/val
-cat <filename.txt> | xargs -I{} cp -R train/{} imagenet_notdogs/train/
-cat <filename.txt> | xargs -I{} cp -R val/{} imagenet_notdogs/val/
+cat imagenet_notdogs.txt | xargs -I{} cp -R train/{} imagenet_notdogs/train/
+cat imagenet_notdogs.txt | xargs -I{} cp -R val/{} imagenet_notdogs/val/
+
+mkdir -p imagenet_dogs/train
+mkdir -p imagenet_dogs/val
+cat imagenet_dogs.txt | xargs -I{} cp -R train/{} imagenet_dogs/train/
+cat imagenet_dogs.txt | xargs -I{} cp -R val/{} imagenet_dogs/val/
 ```
+
+(`val/` can be obtained using [Soumith's valprep.sh script](https://raw.githubusercontent.com/soumith/imagenetloader.torch/master/valprep.sh))
+
+An example dataset file is provided in [dataset.py](dataset.py).
