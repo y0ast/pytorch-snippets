@@ -24,6 +24,8 @@ comm -3 <(sort imagenet.txt) <(sort imagenet_dogs.txt) > imagenet_notdogs.txt
 shuf -n 118 imagenet_notdogs.txt > imagenet_notdogs_subset.txt
 ```
 
+### Create dataset on disk 
+
 In a folder with the `train/` and `val/` ImageNet sub-folders:
 
 ```
