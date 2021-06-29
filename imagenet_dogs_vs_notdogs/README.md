@@ -21,7 +21,7 @@ comm -3 <(sort imagenet.txt) <(sort imagenet_dogs.txt) > imagenet_notdogs.txt
 [imagenet_notdogs_subset.txt](imagenet_notdogs_subset.txt) created using:
 
 ```
-shuf -n 118 imagenet.txt > imagenet_notdogs_subset.txt
+shuf -n 118 imagenet_notdogs.txt > imagenet_notdogs_subset.txt
 ```
 
 In a folder with the `train/` and `val/` ImageNet sub-folders:
