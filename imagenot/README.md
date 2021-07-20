@@ -20,4 +20,4 @@ cat imagenot_out-domain.txt | xargs -I{} cp -R val/{} imagenot_out-domain/val/
 
 (`val/` can be obtained using [Soumith's valprep.sh script](https://raw.githubusercontent.com/soumith/imagenetloader.torch/master/valprep.sh))
 
-An example way to use these folders in PyTorch is provided in [dataset.py](dataset.py).
+An easy to adapt example to use these folders in PyTorch is provided in [dataset.py](../imagenet_dogs_vs_notdogs/dataset.py).
